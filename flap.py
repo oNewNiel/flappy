@@ -162,3 +162,19 @@ class Chao:
     def desenhar(self, tela):
         tela.blit(self.IMAGEM, (self.x1, self.y))
         tela.blit(self.IMAGEM, (self.x2, self.y))
+
+
+def desenhar_tela(tela, passaros, canos, chao, pontos):
+    tela.blit(IMAGEM_FUNDO, (0,0))
+    for passaro in passaros:
+        passaro.desenhar(tela)
+
+    for cano in canos:
+        cano.desenhar(tela)
+
+    texto = FONTE_PONTOS.render(f"PONTUAÇÃO: {pontos}", 1, (255, 255, 255))
+    tela.blit(texto, (TELA_LARGURA-10-tela.get_width(), 10))
+
+    chao.desenhar(tela)
+
+    pygame.display.update()
