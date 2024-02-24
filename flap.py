@@ -94,7 +94,7 @@ class Passaro:
         tela.blit(imagem_rotacionada, retangulo.topleft)
 
     def get_mask(self):
-        pygame.mask.from_surface(self.imagem)
+        return pygame.mask.from_surface(self.imagem)
 
 
 class Cano:
