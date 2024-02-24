@@ -18,7 +18,7 @@ IMAGENS_PASSARO = [
 
 # Configuração fontes
 pygame.font.init()
-FONTE_PONTOS = pygame.font.SysFont('arial', 50)
+FONTE_PONTOS = pygame.font.SysFont('arial', 40)
 
 
 class Passaro:
@@ -173,7 +173,7 @@ def desenhar_tela(tela, passaros, canos, chao, pontos):
         cano.desenhar(tela)
 
     texto = FONTE_PONTOS.render(f"PONTUAÇÃO: {pontos}", 1, (255, 255, 255))
-    tela.blit(texto, (TELA_LARGURA-10-tela.get_width(), 10))
+    tela.blit(texto, (TELA_LARGURA-10-texto.get_width(), 10))
 
     chao.desenhar(tela)
 
@@ -183,7 +183,7 @@ def main():
     passaros = [Passaro(230,350)]
     chao = Chao(730)
     canos = [Cano(700)]
-    tela = pygame.display.set_mode(TELA_LARGURA, TELA_ALTURA)
+    tela = pygame.display.set_mode((TELA_LARGURA, TELA_ALTURA))
     pontos = 0
     relogio = pygame.time.Clock()
     
